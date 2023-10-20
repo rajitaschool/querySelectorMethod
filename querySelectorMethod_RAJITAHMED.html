@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajit Ahmed querySelector Method</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+        #coolDiv{
+            margin: 20px;
+            border-style: solid;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function fun() {
+            let r = parseInt(Math.random() * 256);
+            let g = parseInt(Math.random() * 256);
+            let b = parseInt(Math.random() * 256);
+            document.querySelector("#message").style.color = "rgb("+r+","+g+","+b+")";
+        }
+
+        function fun2() {
+            const nodeList = document.querySelectorAll("#coolDiv");
+            for (let i = 0; i < nodeList.length; i++) {
+                let radiusRandom = 10 * (parseInt(Math.random() * 5) +1);
+                let divR = parseInt(Math.random() * 256);
+                let divG = parseInt(Math.random() * 256);
+                let divB = parseInt(Math.random() * 256);
+                nodeList[i].style.borderRadius = radiusRandom +"px";
+                nodeList[i].style.borderColor = "rgb("+divR+","+divG+","+divB+")";
+                nodeList[i].style.color = "rgb("+divR+","+divG+","+divB+")";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p id = "message">Random Sentence of a lot of random words. (I will be changed!)</p>
+    <button onclick = "fun();">Click me For fun!</button>
+
+    <div id = "coolDiv">
+        <p>Cool div number 1!</p>
+    </div>
+    
+    <div id = "coolDiv">
+        <p>Cool div number 2!</p>
+    </div>
+
+    <button onclick ="fun2();">Click me For more fun!</button>
+</body>
+</html>
